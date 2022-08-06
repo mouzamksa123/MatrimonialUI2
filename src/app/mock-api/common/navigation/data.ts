@@ -1,7 +1,8 @@
 /* tslint:disable:max-line-length */
 import { FuseNavigationItem } from '@fuse/components/navigation';
 
-export const defaultNavigation: FuseNavigationItem[] = [
+
+let menuList: any = [
     {
         id   : 'messages',
         title: 'Messages',
@@ -32,7 +33,7 @@ export const defaultNavigation: FuseNavigationItem[] = [
         children: [
             {
                 id   : 'myprofile.editProfile',
-                title: 'Edit Profile',
+                title: 'View/Edit Profile',
                 type : 'basic',
                 icon : 'heroicons_outline:clipboard-check',
                 link : '/myprofile/editProfile'
@@ -50,6 +51,20 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 type : 'basic',
                 icon : 'heroicons_outline:chart-pie',
                 link : '/myprofile/editPreferences'
+            },
+            {
+                id   : 'myprofile.mysavedsearches',
+                title: 'My Saved Searches',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/myprofile/mysavedsearches'
+            },
+            {
+                id   : 'myprofile.myexpressinterest',
+                title: 'My Express Interest',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/myprofile/myexpressinterest'
             }
         ]
     },
@@ -68,21 +83,21 @@ export const defaultNavigation: FuseNavigationItem[] = [
             },
             {
                 id   : 'profileDetails.myshortlistprofiles',
-                title: 'My Shortlist Profile',
+                title: 'Shortlisted Profile',
                 type : 'basic',
                 icon : 'heroicons_outline:chart-pie',
                 link : '/profileDetails/myshortlistprofiles'
             },
             {
                 id   : 'profileDetails.myblocklistprofiles',
-                title: 'My Blocklist Profile',
+                title: 'Blocked Profile',
                 type : 'basic',
                 icon : 'heroicons_outline:chart-pie',
                 link : '/profileDetails/myblocklistprofiles'
             },
             {
                 id   : 'profileDetails.myprofileviewed',
-                title: 'My Profile Viewed',
+                title: 'My Profile Viewed By',
                 type : 'basic',
                 icon : 'heroicons_outline:chart-pie',
                 link : '/profileDetails/myprofileviewed'
@@ -109,32 +124,45 @@ export const defaultNavigation: FuseNavigationItem[] = [
                 link : '/profileDetails/photopasswordrequest'
             }
         ]
-    }
-];
-export const compactNavigation: FuseNavigationItem[] = [
+    },
     {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
+        id   : 'settings',
+        title: 'Settings',
+        type : 'group',
         icon : 'heroicons_outline:chart-pie',
-        link : '/example'
+        children: [
+            {
+                id   : 'settings.photoprivacysetting',
+                title: 'Photo Privacy Setting',
+                type : 'basic',
+                icon : 'heroicons_outline:clipboard-check',
+                link : '/settings/photoprivacysetting'
+            },
+            {
+                id   : 'settings.contactviewsetting',
+                title: 'Contact View Setting',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/settings/contactviewsetting'
+            },
+            {
+                id   : 'settings.changepassword',
+                title: 'Change Password',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/settings/changepassword'
+            },
+            {
+                id   : 'settings.logout',
+                title: 'logout',
+                type : 'basic',
+                icon : 'heroicons_outline:chart-pie',
+                link : '/settings/logout'
+            }
+        ]
     }
 ];
-export const futuristicNavigation: FuseNavigationItem[] = [
-    {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    }
-];
-export const horizontalNavigation: FuseNavigationItem[] = [
-    {
-        id   : 'example',
-        title: 'Example',
-        type : 'basic',
-        icon : 'heroicons_outline:chart-pie',
-        link : '/example'
-    }
-];
+export const defaultNavigation: FuseNavigationItem[] = menuList;
+export const compactNavigation: FuseNavigationItem[] = menuList;
+export const futuristicNavigation: FuseNavigationItem[] = menuList;
+export const horizontalNavigation: FuseNavigationItem[] = menuList;

@@ -75,7 +75,8 @@ export const appRoutes: Route[] = [
         children   : [
             {path: 'messages', loadChildren: () => import('app/modules/admin/messages/messages.module').then(m => m.EmailMessagesModule)},
             {path: 'myprofile', loadChildren: () => import('app/modules/admin/my-profile/my-profile.module').then(m => m.MyProfileModule)},
-            {path: 'profileDetails', loadChildren: () => import('app/modules/admin/profile-details/profile-details.module').then(m => m.ProfileDetailsModule)}
+            {path: 'profileDetails', loadChildren: () => import('app/modules/admin/profile-details/profile-details.module').then(m => m.ProfileDetailsModule)},
+            {path: 'settings', loadChildren: () => import('app/modules/admin/settings/settings.module').then(m => m.SettingsModule)}
         ]
     }
 ];
